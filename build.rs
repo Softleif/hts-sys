@@ -34,6 +34,7 @@ const FILES: &[&str] = &[
     "region.c",
     "sam.c",
     "sam_mods.c",
+    "simd.c",
     "synced_bcf_reader.c",
     "vcf_sweep.c",
     "tbx.c",
