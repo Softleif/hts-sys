@@ -29,13 +29,13 @@ openssl-sys = { version = "0.9.56", optional = true }
 
 [features]
 default = ["bzip2", "lzma", "curl"]
-bzip2 = ["bzip2-sys"]
-lzma = ["lzma-sys"]
-curl = ["curl-sys", "openssl-sys"]
-libdeflate = ["libdeflate-sys"]
+bzip2 = ["bzip2-sys"] # Bzip2 support
+lzma = ["lzma-sys"] # LZMA support
+curl = ["curl-sys", "openssl-sys"] # HTTP/FTP support (requires OpenSSL on non-macOS Unix)
+libdeflate = ["libdeflate-sys"] # libdeflate support (faster compression/decompression)
 gcs = ["curl"] # Google Cloud Storage support
 s3 = ["curl"] # Amazon S3 support
-static = [] # Don't dynamically link to other libraries
+static = [] # Deprecated, always on
 
 [build-dependencies]
 fs-utils = "1.1"
