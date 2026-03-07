@@ -96,12 +96,11 @@ fn main() {
 
     cfg.include(out.join("htslib"));
 
-    let want_static = cfg!(feature = "static") || env::var("HTS_STATIC").is_ok();
-
-    if want_static {
-        cfg.warnings(false).static_flag(true).pic(true);
-    } else {
-        cfg.warnings(false).static_flag(false).pic(true);
+    if cfg!(feature = "static") {
+        // this is the default as of 2.3.0, we just keep the feature for backwards compatibility
+        println!(
+            "cargo:warning=The `static` feature is deprecated and is now the default behavior."
+        );
     }
 
     if let Ok(z_inc) = env::var("DEP_Z_INCLUDE") {
@@ -262,6 +261,7 @@ fn main() {
     }
 
     cfg.file("wrapper.c");
+    cfg.cargo_warnings(false);
     cfg.compile("hts");
 
     // If bindgen is enabled, use it
