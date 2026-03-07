@@ -270,6 +270,8 @@ fn main() {
         bindgen::Builder::default()
             .header("wrapper.h")
             .layout_tests(false)
+            .rust_target(bindgen::RustTarget::stable(56, 0).unwrap())
+            .rust_edition(bindgen::RustEdition::Edition2021)
             .generate_comments(false)
             .blocklist_function("strtold")
             .blocklist_type("max_align_t")

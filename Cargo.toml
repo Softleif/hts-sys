@@ -10,7 +10,8 @@ keywords = ["htslib", "bam", "bioinformatics", "pileup", "sequencing"]
 license = "MIT"
 repository = "https://github.com/samtools/htslib.git"
 documentation = "https://docs.rs/rust-htslib"
-edition = "2018"
+edition = "2021"
+rust-version = "1.56"
 
 [package.metadata.release]
 pre-release-commit-message = "release version {{version}}"
@@ -38,6 +39,6 @@ static = [] # Don't dynamically link to other libraries
 
 [build-dependencies]
 fs-utils = "1.1"
-bindgen = { version = "0.71.1", default-features = false, features = ["runtime"], optional = true }
-cc = { version = "1.0", features = ["parallel"] }
-glob = "0.3.0"
+bindgen = { version = "0.72.0", default-features = false, features = ["runtime"], optional = true }
+cc = { version = "1.2.56", features = ["parallel"] }
+glob = "0.3.3"
