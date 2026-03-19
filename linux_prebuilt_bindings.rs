@@ -9511,19 +9511,19 @@ unsafe extern "C" {
     pub fn hts_tpool_process_ref_decr(q: *mut hts_tpool_process);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}_wrap_kbs_init2"]
+    #[link_name = "\u{1}wrap_kbs_init2"]
     pub fn kbs_init2(ni: usize, fill: ::std::os::raw::c_int) -> *mut kbitset_t;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}_wrap_kbs_init"]
+    #[link_name = "\u{1}wrap_kbs_init"]
     pub fn kbs_init(ni: usize) -> *mut kbitset_t;
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}_wrap_kbs_insert"]
+    #[link_name = "\u{1}wrap_kbs_insert"]
     pub fn kbs_insert(bs: *mut kbitset_t, i: ::std::os::raw::c_int);
 }
 unsafe extern "C" {
-    #[link_name = "\u{1}_wrap_kbs_destroy"]
+    #[link_name = "\u{1}wrap_kbs_destroy"]
     pub fn kbs_destroy(bs: *mut kbitset_t);
 }
 pub type __builtin_va_list = *mut ::std::os::raw::c_char;
