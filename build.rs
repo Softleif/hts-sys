@@ -3,8 +3,6 @@
 // This file may not be copied, modified, or distributed
 // except according to those terms.
 
-#[cfg(feature = "bindgen")]
-use bindgen;
 use fs_utils::copy::copy_directory;
 use glob::glob;
 
